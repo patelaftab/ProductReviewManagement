@@ -31,5 +31,13 @@ namespace Day_35_Linque
                 Console.WriteLine("ProductId: " + list.ProductId + " UserId: " + list.userId + " Rating: " + list.Rating + " Review: " + list.Review + " isLike: " + list.isLike);
             }
         }
+        public void RetrivingCountOfRecors(List<ProductReview> reviews)
+        {
+            var records=reviews.GroupBy(x=> x.ProductId).Select(x => new {ProductId =x.Key, count=x.Count()});
+            foreach (var record in records) 
+            {
+                Console.WriteLine(record.ProductId + "=" + record.count);
+            }
+        }
     }
 }

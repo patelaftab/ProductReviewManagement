@@ -25,8 +25,9 @@ namespace ProductReviewManagement
             //    Console.WriteLine("Product Id:"+list.ProductId+  "UserId:"+list.userId + "Rating:"+ list.Rating +"Review: "+ list.Rating + "isLike: " + list.isLike);
             //}
             Management management=new Management();
-            // management.TopRecords(productReviews);
-            management.SelectedRecord(productReviews);
+            // management.TopRecords(productReviews);UC2
+            // management.SelectedRecord(productReviews);UC3
+            management.RetrivingCountOfRecors(productReviews); //UC4
         }
     }
 }
