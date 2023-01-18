@@ -18,5 +18,18 @@ namespace Day_35_Linque
                 Console.WriteLine("ProductId: " + list.ProductId  + " UserId: " + list.userId + " Rating: " + list.Rating + " Review: " + list.Review + " isLike: " + list.isLike);
             }
         }
+        public void SelectedRecord(List<ProductReview> reviews) 
+        {
+            var recordData = from ProductReview in reviews
+                             where (ProductReview.ProductId == 1 && ProductReview.Rating > 3) ||
+                             (ProductReview.ProductId == 4 && ProductReview.Rating > 3) ||
+                             (ProductReview.ProductId == 9 && ProductReview.Rating > 3)
+                             select ProductReview;
+                            
+            foreach (var list in recordData)
+            {
+                Console.WriteLine("ProductId: " + list.ProductId + " UserId: " + list.userId + " Rating: " + list.Rating + " Review: " + list.Review + " isLike: " + list.isLike);
+            }
+        }
     }
 }
